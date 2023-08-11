@@ -306,6 +306,7 @@
 				DEVELOPMENT_TEAM = 7SJZ7UMS8U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MapKitApp/Resources/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The application needs access to your current location to display it on the map and enhance the experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MainViewController;
@@ -334,6 +335,7 @@
 				DEVELOPMENT_TEAM = 7SJZ7UMS8U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MapKitApp/Resources/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The application needs access to your current location to display it on the map and enhance the experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MainViewController;

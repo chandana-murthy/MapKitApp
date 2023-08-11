@@ -10,6 +10,9 @@ import MapKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var currentLocButton: UIButton!
+
+    private let locationManager = CLLocationManager()
     private var routeData: Route?
     private var routeCoordinates: [CLLocation] = []
     private let ANNOTATION_ID = "customAnn"
@@ -19,6 +22,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         mapView.overrideUserInterfaceStyle = .dark
         mapView.delegate = self
+        locationManager.delegate = self
+        currentLocButton.layer.cornerRadius = currentLocButton.frame.width / 2
         setupMapData()
     }
 
@@ -99,6 +104,31 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: CLLocationManagerDelegate {
+    @IBAction func didTapCurrentLocationButton(_ sender: Any) {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else {
+            return
+        }
+            var mapRegion = MKCoordinateRegion()
+            mapRegion.center = location.coordinate
+            mapRegion.span.longitudeDelta = 0.2
+            mapRegion.span.latitudeDelta = 0.2
+            let currentLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+            let annotation = MKPointAnnotation()
+        annotation.title = "You are here"
+            annotation.coordinate = location.coordinate
+            mapView.addAnnotation(annotation)
+            mapView.setRegion(mapRegion, animated: true)
+
+            locationManager.stopUpdatingLocation()
+    }
+}
+
 extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
@@ -117,6 +147,8 @@ extension ViewController: MKMapViewDelegate {
             annotationView?.canShowCallout = true
         case "End":
             annotationView?.markerTintColor = .green
+        case "You are here":
+            annotationView?.markerTintColor = .systemBlue
         default:
             break
         }
