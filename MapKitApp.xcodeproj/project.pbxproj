@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		14C7184E2A86CF46005A4AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7184D2A86CF46005A4AAC /* AppDelegate.swift */; };
 		14C718502A86CF46005A4AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7184F2A86CF46005A4AAC /* SceneDelegate.swift */; };
-		14C718522A86CF46005A4AAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C718512A86CF46005A4AAC /* ViewController.swift */; };
-		14C718552A86CF46005A4AAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C718532A86CF46005A4AAC /* Main.storyboard */; };
+		14C718522A86CF46005A4AAC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C718512A86CF46005A4AAC /* MainViewController.swift */; };
+		14C718552A86CF46005A4AAC /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C718532A86CF46005A4AAC /* MainViewController.storyboard */; };
 		14C718572A86CF48005A4AAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C718562A86CF48005A4AAC /* Assets.xcassets */; };
 		14C7185A2A86CF48005A4AAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C718582A86CF48005A4AAC /* LaunchScreen.storyboard */; };
+		14C718622A86D298005A4AAC /* mapData.json in Resources */ = {isa = PBXBuildFile; fileRef = 14C718612A86D298005A4AAC /* mapData.json */; };
+		14C718642A86D3FA005A4AAC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C718632A86D3FA005A4AAC /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		14C7184A2A86CF46005A4AAC /* MapKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapKitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C7184D2A86CF46005A4AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C7184F2A86CF46005A4AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		14C718512A86CF46005A4AAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		14C718542A86CF46005A4AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14C718512A86CF46005A4AAC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		14C718542A86CF46005A4AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainViewController.storyboard; sourceTree = "<group>"; };
 		14C718562A86CF48005A4AAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14C718592A86CF48005A4AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14C7185B2A86CF48005A4AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14C718612A86D298005A4AAC /* mapData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mapData.json; sourceTree = "<group>"; };
+		14C718632A86D3FA005A4AAC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,25 @@
 		14C7184C2A86CF46005A4AAC /* MapKitApp */ = {
 			isa = PBXGroup;
 			children = (
+				14C718652A86D40D005A4AAC /* Resources */,
 				14C7184D2A86CF46005A4AAC /* AppDelegate.swift */,
 				14C7184F2A86CF46005A4AAC /* SceneDelegate.swift */,
-				14C718512A86CF46005A4AAC /* ViewController.swift */,
-				14C718532A86CF46005A4AAC /* Main.storyboard */,
-				14C718562A86CF48005A4AAC /* Assets.xcassets */,
-				14C718582A86CF48005A4AAC /* LaunchScreen.storyboard */,
-				14C7185B2A86CF48005A4AAC /* Info.plist */,
+				14C718512A86CF46005A4AAC /* MainViewController.swift */,
+				14C718532A86CF46005A4AAC /* MainViewController.storyboard */,
+				14C718632A86D3FA005A4AAC /* Model.swift */,
+				14C718612A86D298005A4AAC /* mapData.json */,
 			);
 			path = MapKitApp;
+			sourceTree = "<group>";
+		};
+		14C718652A86D40D005A4AAC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				14C718582A86CF48005A4AAC /* LaunchScreen.storyboard */,
+				14C7185B2A86CF48005A4AAC /* Info.plist */,
+				14C718562A86CF48005A4AAC /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +139,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C718622A86D298005A4AAC /* mapData.json in Resources */,
 				14C7185A2A86CF48005A4AAC /* LaunchScreen.storyboard in Resources */,
 				14C718572A86CF48005A4AAC /* Assets.xcassets in Resources */,
-				14C718552A86CF46005A4AAC /* Main.storyboard in Resources */,
+				14C718552A86CF46005A4AAC /* MainViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,21 +153,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14C718522A86CF46005A4AAC /* ViewController.swift in Sources */,
+				14C718522A86CF46005A4AAC /* MainViewController.swift in Sources */,
 				14C7184E2A86CF46005A4AAC /* AppDelegate.swift in Sources */,
 				14C718502A86CF46005A4AAC /* SceneDelegate.swift in Sources */,
+				14C718642A86D3FA005A4AAC /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		14C718532A86CF46005A4AAC /* Main.storyboard */ = {
+		14C718532A86CF46005A4AAC /* MainViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				14C718542A86CF46005A4AAC /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		14C718582A86CF48005A4AAC /* LaunchScreen.storyboard */ = {
@@ -289,10 +305,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7SJZ7UMS8U;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MapKitApp/Info.plist;
+				INFOPLIST_FILE = MapKitApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -317,10 +333,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7SJZ7UMS8U;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MapKitApp/Info.plist;
+				INFOPLIST_FILE = MapKitApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
